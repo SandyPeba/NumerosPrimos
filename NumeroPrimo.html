@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="resultado"></div>
+    <script>
+      var n1 = parseInt(prompt("Ingresa el numero para indicar el inicio del rango"));
+      var n2 = parseInt(prompt("Ingresa el final del rango"));
+      var resultado = '';
+      for(var i=n1; i<=n2; i++){
+        if(esPrimo(i)){
+            resultado += i + ', ';
+        }
+      }
+      document.getElementById('resultado').innerHTML = 'Los números primos en el rango '+n1+'-'+ n2+' son: ' + resultado;
+
+      function esPrimo(num) {
+        for(var j = 2; j < num; j++)
+          if(num % j === 0) return false;
+        return num > 1;
+      }
+    </script>
+</body>
+</html>
